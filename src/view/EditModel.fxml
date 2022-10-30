@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EditModelController">
+   <children>
+      <GridPane layoutX="202.0" layoutY="24.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="75.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="10.0" prefWidth="125.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="name:" />
+            <TextField fx:id="nameField" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+      <HBox alignment="TOP_RIGHT" layoutX="510.0" layoutY="14.0" spacing="15.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+         <children>
+            <Label fx:id="usernameLabel" alignment="CENTER" contentDisplay="RIGHT" prefHeight="23.0" text="  " textAlignment="JUSTIFY" HBox.hgrow="ALWAYS" />
+            <Button fx:id="logoutBtn" mnemonicParsing="false" onAction="#logoutBtnOnClick" text="Logout" />
+         </children>
+      </HBox>
+      <ListView fx:id="modelVersionList" layoutX="100.0" layoutY="130.0" prefHeight="197.0" prefWidth="400.0" />
+      <HBox layoutX="143.0" layoutY="349.0" prefHeight="25.0" prefWidth="317.0" spacing="60.0">
+         <children>
+            <Button fx:id="backBtn" mnemonicParsing="false" onAction="#backBtnOnClick" text="Back" />
+            <Button fx:id="addModelVersionBtn" mnemonicParsing="false" onAction="#addModelVersionBtnOnClick" text="Add model version" />
+            <Button fx:id="pickBtn" mnemonicParsing="false" onAction="#pickBtnOnClick" text="Pick" />
+         </children>
+      </HBox>
+      <Button fx:id="saveBtn" layoutX="276.0" layoutY="67.0" mnemonicParsing="false" onAction="#saveBtnOnClick" text="Save" />
+      <Label layoutX="253.0" layoutY="102.0" text="Model versions">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

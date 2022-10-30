@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EditBrandController">
+   <children>
+      <ListView fx:id="modelList" layoutX="50.0" layoutY="139.0" prefHeight="200.0" prefWidth="400.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+      <HBox alignment="BOTTOM_CENTER" layoutX="114.0" layoutY="390.0" prefHeight="25.0" prefWidth="274.0" spacing="60.0" AnchorPane.leftAnchor="114.0" AnchorPane.rightAnchor="112.0">
+         <children>
+            <Button fx:id="backBtn" mnemonicParsing="false" onAction="#backBtnOnClick" text="Back" />
+            <Button fx:id="addModelBtn" mnemonicParsing="false" onAction="#addModelBtnOnClick" text="Add model" />
+            <Button fx:id="pickBtn" mnemonicParsing="false" onAction="#pickBtnOnClick" text="Pick" />
+         </children>
+      </HBox>
+      <GridPane alignment="TOP_CENTER" layoutX="150.0" layoutY="27.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="92.0" minWidth="10.0" prefWidth="69.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="131.0" minWidth="10.0" prefWidth="131.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="name:" />
+            <Label text="logo URL:" GridPane.rowIndex="1" />
+            <TextField fx:id="nameField" GridPane.columnIndex="1" />
+            <TextField fx:id="logoField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <HBox alignment="TOP_RIGHT" layoutX="400.0" layoutY="14.0" spacing="15.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+         <children>
+            <Label fx:id="usernameLabel" alignment="CENTER" contentDisplay="RIGHT" prefHeight="23.0" text="  " textAlignment="JUSTIFY" HBox.hgrow="ALWAYS" />
+            <Button fx:id="logoutBtn" mnemonicParsing="false" onAction="#logoutBtnOnClick" text="Logout" />
+         </children>
+      </HBox>
+      <Button fx:id="saveBtn" layoutX="230.0" layoutY="104.0" mnemonicParsing="false" onAction="#saveBtnOnClick" text="Save" />
+      <ImageView fx:id="logoImageView" fitHeight="111.0" fitWidth="103.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

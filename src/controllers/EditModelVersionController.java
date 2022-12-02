@@ -6,6 +6,8 @@ import java.util.Iterator;
 import java.util.Optional;
 import java.util.Set;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +21,10 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.CarBrand;
@@ -56,6 +61,18 @@ public class EditModelVersionController extends LongTermController{
 	@FXML
 	private ListView<Engine> manufacturerEngineList, availableEngineList;
 	
+	
+	
+	@FXML
+	private TableView<Engine> availEngineTable;
+	@FXML
+	private TableColumn<Engine, String> availEngineNameCol;
+	@FXML
+	private TableColumn<Engine, Integer> availEnginePowerCol;
+	
+	private ObservableList<Engine> engines;
+	
+	
 	private Set<Engine> availEngines, manufacturerEngines;
 	
 	private CarBrand selectedBrand;
@@ -63,6 +80,13 @@ public class EditModelVersionController extends LongTermController{
 	private ModelVersion selectedModelVersion;
 	
 	private boolean changeMade ;
+	
+	
+	public void init() {
+		availEngineNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+		availEnginePowerCol.setCellValueFactory(new PropertyValueFactory<>("power"));
+	}
+	
 	
 //	GETERS & SETTER	
 	public void setSelectedBrand(CarBrand selectedBrand) {
@@ -90,12 +114,22 @@ public class EditModelVersionController extends LongTermController{
 	public void getAvailableEngines(ModelVersion modelVersion) {
 		availEngines = new HashSet<>();
 		manufacturerEngines = new HashSet<>();
-		Thread engineThread = new Thread(new RetrieveEngines(availEngines, modelVersion.getId(), manufacturerEngines, selectedBrand.getId()));
+		
+		engines = FXCollections.observableArrayList();
+		
+		Thread engineThread = new Thread(new RetrieveEngines(engines, modelVersion.getId(), manufacturerEngines, selectedBrand.getId())); //availEngines
 		engineThread.start();
 		availableEngineList.getItems().clear();
 		manufacturerEngineList.getItems().clear();
 		try {
 			engineThread.join();
+			
+			
+//			System.out.println(engines);
+			availEngineTable.setItems(engines);
+//			System.out.println("2) "+availEngineTable.getItems());
+			
+			
 			availableEngineList.getItems().addAll(availEngines);
 			manufacturerEngineList.getItems().addAll(manufacturerEngines);
 		} catch (InterruptedException e) {

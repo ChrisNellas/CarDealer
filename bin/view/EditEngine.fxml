@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="416.0" prefWidth="495.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EditEngineController">
+   <children>
+      <HBox alignment="TOP_RIGHT" layoutX="420.0" layoutY="50.0" spacing="15.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+         <children>
+            <Label fx:id="usernameLabel" alignment="CENTER" contentDisplay="RIGHT" prefHeight="23.0" text="  " textAlignment="JUSTIFY" HBox.hgrow="ALWAYS" />
+            <Button fx:id="logoutBtn" mnemonicParsing="false" onAction="#logoutBtnOnClick" text="Logout" />
+         </children>
+      </HBox>
+      <Button fx:id="backBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backBtnOnClick" text="Back" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+      <GridPane alignment="CENTER" layoutX="148.0" layoutY="39.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="75.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="10.0" prefWidth="125.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="name:" />
+            <Label text="power:" GridPane.rowIndex="1" />
+            <TextField fx:id="nameField" GridPane.columnIndex="1" />
+            <TextField fx:id="powerField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="type:" GridPane.rowIndex="2" />
+            <ComboBox fx:id="typeComboBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <Group layoutX="21.0" layoutY="129.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="20.0">
+         <children>
+            <Group layoutX="207.0" layoutY="79.0">
+               <children>
+                  <Button fx:id="saveBtn" layoutY="159.0" mnemonicParsing="false" onAction="#saveBtnOnClick" text="save" />
+                  <Button fx:id="addGearboxBtn" layoutX="7.0" mnemonicParsing="false" onAction="#addGearboxBtnOnClick" text="&gt;" />
+                  <Button fx:id="removeGearboxBtn" layoutX="7.0" layoutY="58.0" mnemonicParsing="false" onAction="#removeGearboxBtnOnClick" text="&lt;" />
+               </children>
+            </Group>
+            <VBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Label text="Manufacturer gearboxes" />
+                  <HBox>
+                     <children>
+                        <ListView fx:id="manufacturerGearboxList" prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                  </HBox>
+                  <Button fx:id="addNewGearboxBtn" mnemonicParsing="false" onAction="#addNewGearboxBtnOnClick" text="add gearbox" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="254.0" spacing="10.0">
+               <children>
+                  <Label text="Available gearboxes" />
+                  <ListView fx:id="availableGearboxList" prefHeight="200.0" prefWidth="200.0" />
+                  <Button fx:id="editGearboxBtn" mnemonicParsing="false" onAction="#editGearboxBtnOnClick" text="edit gearbox" />
+               </children>
+            </VBox>
+         </children>
+      </Group>
+   </children>
+</AnchorPane>

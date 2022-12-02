@@ -41,6 +41,7 @@ public class Model {
 
 	@Override
 	public String toString() {
-		return "Model [id=" + id + ", name=" + name + ", modelVersions=" + modelVersions + "]";
+//		return "Model [id=" + id + ", name=" + name + ", modelVersions=" + modelVersions + "]";
+		return getName();
 	}
 }

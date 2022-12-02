@@ -1,17 +1,9 @@
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Optional;
-
 import controllers.LoginController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import model.DBConnector;
 
 public class Main extends Application{
 	

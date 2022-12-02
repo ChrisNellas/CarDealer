@@ -5,6 +5,8 @@ import java.sql.SQLException;
 import java.util.Optional;
 import java.util.Set;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import model.DBConnector;
 import model.Engine;
 import model.Type;
@@ -16,10 +18,14 @@ public class RetrieveEngines implements Runnable{
 	Type type;
 	Long mVId, brandId;
 	
+	ObservableList<Engine> list;
+	
+	
 	public RetrieveEngines(Set<Engine> enginesSet, Long modelVersionId) {
 		this.availEngines = enginesSet;
 		con = new DBConnector();
 		mVId = modelVersionId;
+		list = FXCollections.observableArrayList();
 	}
 	
 	public RetrieveEngines(Set<Engine> AvailEngineSet, Long modelVersionId, Set<Engine> manufacturerEngineSet, Long brandId) {
@@ -29,6 +35,16 @@ public class RetrieveEngines implements Runnable{
 		mVId = modelVersionId;
 		this.brandId = brandId;
 	}
+	
+	
+	public RetrieveEngines(ObservableList<Engine> AvailEngineSet, Long modelVersionId, Set<Engine> manufacturerEngineSet, Long brandId) {
+		this.list = AvailEngineSet;
+		this.manufacturerEngines = manufacturerEngineSet;
+		con = new DBConnector();
+		mVId = modelVersionId;
+		this.brandId = brandId;
+	}
+	
 
 	@Override
 	public void run() {
@@ -64,7 +80,7 @@ public class RetrieveEngines implements Runnable{
 			try {
 				while(rs.next()) {
 					type = getEngineType(rs.getString("type"));
-					availEngines.add(new Engine(rs.getLong("id"), rs.getString("name").strip(), rs.getInt("power"), type));
+					availEngines.add(new Engine(rs.getLong("id"), rs.getString("name").strip(), rs.getInt("power"), type)); //availEngines | i had list.add......??
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();

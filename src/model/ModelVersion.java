@@ -61,8 +61,9 @@ public class ModelVersion {
 
 	@Override
 	public String toString() {
-		return "ModelVersion [id=" + id + ", name=" + name + ", image=" + image + ", engineVersions=" + engineVersions
-				+ ", availableWith3=" + availableWith3 + ", availableWith5=" + availableWith5 + ", availablecolors="
-				+ availablecolors + "]";
+//		return "ModelVersion [id=" + id + ", name=" + name + ", image=" + image + ", engineVersions=" + engineVersions
+//				+ ", availableWith3=" + availableWith3 + ", availableWith5=" + availableWith5 + ", availablecolors="
+//				+ availablecolors + "]";
+		return getName();
 	}	
 }

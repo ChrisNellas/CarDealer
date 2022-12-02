@@ -106,6 +106,9 @@ public class EditModelController extends LongTermController{
 			root = loader.load();
 			EditModelVersionController editModelVersionController = loader.getController();
 			editModelVersionController.setUser(loggedUser);
+			
+			editModelVersionController.init();
+			
 			editModelVersionController.setSelectedBrand(selectedBrand);
 			editModelVersionController.setSelectedModel(selectedModel);
 			editModelVersionController.setSelectedModelVersion(selectedModelVersion);

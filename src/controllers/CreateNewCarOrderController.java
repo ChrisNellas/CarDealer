@@ -251,6 +251,7 @@ public class CreateNewCarOrderController extends LongTermController{
 			
 			//initialize color combo box
 			colors = optSelectedmodelVersion.get().getAvailablecolors();
+			System.out.println(colors);
 			colors.stream().forEach(colorComboBox.getItems()::add);
 			colorComboBox.setDisable(false);
 			

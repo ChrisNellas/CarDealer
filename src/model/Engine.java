@@ -48,8 +48,16 @@ public class Engine {
 		}
 	}
 
+//	@Override
+//	public String toString() {
+//		return "Engine [id=" + id + ", name=" + name + ", power=" + power + ", availableGearboxes=" + availableGearboxes
+//				+ ", type=" + type + "]";
+//	}
+
 	@Override
 	public String toString() {
 		return name + " | " + power+" hp";
-	}	
+	}
+	
+	
 }

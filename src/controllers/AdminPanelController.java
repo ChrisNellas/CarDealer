@@ -2,8 +2,11 @@ package controllers;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -82,7 +85,7 @@ public class AdminPanelController extends LongTermController{
 		try {
 			brandsThread.join();
 			brandList.getItems().clear();
-			brandList.getItems().addAll(brands);
+			brandList.getItems().addAll(brands); //(CarBrand) brands.stream().map(CarBrand::getName).collect(Collectors.toSet())
 			ordersThread.join();
 			createSeries();			
 		} catch (InterruptedException e) {

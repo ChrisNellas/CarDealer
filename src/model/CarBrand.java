@@ -54,6 +54,7 @@ public class CarBrand {
 
 	@Override
 	public String toString() {
-		return "CarBrand [id=" + id + ", name=" + name + ", logo=" + logo + ", models=" + models + "]";
+//		return "CarBrand [id=" + id + ", name=" + name + ", logo=" + logo + ", models=" + models + "]";
+		return getName();
 	}
 }

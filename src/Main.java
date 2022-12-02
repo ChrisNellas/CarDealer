@@ -8,33 +8,12 @@ import javafx.stage.Stage;
 public class Main extends Application{
 	
 	public static void main(String[] args) throws InterruptedException {
-//		DBConnector con = new DBConnector();
-//		con.sendQuery("select * from model_version");
-//		ResultSet rs = con.getResults().get();
-//		try {
-//			while(rs.next()) {
-//				System.out.println(rs.getString("colors"));
-//			}
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-		launch(args);
 		
-//		DBConnector con = new DBConnector();
-//		con.sendQuery("SELECT colors from model_version where version_id=6");
-//		Optional<ResultSet> optRs =  con.getResults();
-//		if(optRs.isPresent()) {
-//			ResultSet rs = optRs.get();
-//			try {
-//				while(rs.next()) {
-//					System.out.println(rs.getString(1));
-//				}
-//			} catch (SQLException e) {
-//				e.printStackTrace();
-//			}
-//		}
+		launch(args); // run the start method
+		
 	}
 	
+//	shows the loginPanel
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("view/LoginPanel.fxml"));

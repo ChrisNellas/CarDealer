@@ -45,7 +45,7 @@ public class AdminPanelController extends LongTermController{
 	@FXML
 	private ListView<CarBrand> brandList;
 	@FXML
-	private LineChart<String, Double> salesLine;
+	private LineChart<String, Double> salesLine; // the bottom-left chart (probably disabled and not visible for now)
 	
 	private Set<Order> orders;
 	private Set<CarBrand> brands;

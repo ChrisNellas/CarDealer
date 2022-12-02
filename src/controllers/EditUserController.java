@@ -1,5 +1,5 @@
 // why after a user has been changed to retrive all users from db 
-// and not update localy the list and update the db
+// and not update locally the list and update the db
 
 package controllers;
 

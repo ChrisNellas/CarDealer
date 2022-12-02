@@ -24,12 +24,6 @@ import model.ModelVersion;
 import model.Type;
 import model.User;
 
-/* CHECKED 
- * 
- * logoutBtn
- * backBtn
- * createEngineBtn
- */
 public class AddEngineController extends ShortTermController{
 	@FXML
 	private Button backBtn, createEngineBtn;

@@ -23,19 +23,6 @@ import model.Gearbox;
 import model.ModelVersion;
 import util.RetrieveGearboxes;
 
-/*
- * CHECKED 
- * 
- * cancelBtn
- * finishBtn
- * cancelBtn
- * addGearboxBtn
- * removeGearboxBtn
- * addNewGearboxBtn
- * 
- * I THINK IS DONE
- * */
-
 public class InsertGearboxController extends ShortTermController{
 
 	@FXML

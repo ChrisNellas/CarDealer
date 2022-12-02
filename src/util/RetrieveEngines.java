@@ -2,6 +2,7 @@ package util;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
@@ -11,6 +12,18 @@ import model.DBConnector;
 import model.Engine;
 import model.Type;
 
+/* To be fixed
+ *  
+ * the first constructor is used in order to make orders (EnginecomboBox inside CreateNewCarOrderController)
+ * 	needs the line 101
+ * the third constructor is used in order to present the available Engines for a specific model_version
+ * 	needs the line 100
+ * 
+ * i have to make them work using the same line 
+ * 
+ * remember to delete 'availEngines = new HashSet<>();' from the 3rd constructor
+ * 
+*/
 public class RetrieveEngines implements Runnable{
 
 	DBConnector con;
@@ -43,6 +56,9 @@ public class RetrieveEngines implements Runnable{
 		con = new DBConnector();
 		mVId = modelVersionId;
 		this.brandId = brandId;
+		
+//		delete it 
+		availEngines = new HashSet<>();
 	}
 	
 
@@ -80,7 +96,9 @@ public class RetrieveEngines implements Runnable{
 			try {
 				while(rs.next()) {
 					type = getEngineType(rs.getString("type"));
-					availEngines.add(new Engine(rs.getLong("id"), rs.getString("name").strip(), rs.getInt("power"), type)); //availEngines | i had list.add......??
+//					temporary solution 
+					list.add(new Engine(rs.getLong("id"), rs.getString("name").strip(), rs.getInt("power"), type)); //availEngines | i had list.add......??
+					availEngines.add(new Engine(rs.getLong("id"), rs.getString("name").strip(), rs.getInt("power"), type));
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();

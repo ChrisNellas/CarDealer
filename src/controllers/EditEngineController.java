@@ -31,19 +31,6 @@ import model.Type;
 import model.User;
 import util.RetrieveGearboxes;
 
-/*
- * CHECKED
- * saveBtn
- * backBtn
- * logoutBtn
- * addGearboxBtn
- * removeGearboxBtn
- * addNewGearboxBtn
- *  
- * NOT DONE
- * editGearboxBtn
- */
-
 public class EditEngineController extends LongTermController{
 
 	@FXML

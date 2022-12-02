@@ -35,20 +35,6 @@ import model.ModelVersion;
 import model.User;
 import util.RetrieveEngines;
 
-/*CHECKED
- * 
- * backBtn
- * addColorBtn
- * removeColorBtn
- * logoutBtn
- * removeEngineBtn
- * createNewEngineBtn
- * addEngineBtn
- * saveBtn
- * pickBtn
- * 
- * THIS OK
- */
 public class EditModelVersionController extends LongTermController{
 	@FXML 
 	private Button backBtn, addEngineBtn, removeEngineBtn, pickBtn, saveBtn, removeColorBtn, addColorBtn, createNewEngineBtn;

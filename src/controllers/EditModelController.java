@@ -1,11 +1,3 @@
-/*CHECKED
- * 
- * backBtn
- * saveBtn 
- * addModelVersionBtn
- * pickBtn
- * logoutBtn
-*/
 package controllers;
 
 import java.io.IOException;

@@ -29,7 +29,7 @@
          </children>
       </HBox>
       <ListView fx:id="userList" layoutX="585.0" layoutY="39.0" prefHeight="200.0" prefWidth="235.0" />
-      <LineChart fx:id="salesLine" layoutX="36.0" layoutY="339.0" prefHeight="325.0" prefWidth="447.0" title="line">
+      <LineChart fx:id="salesLine" disable="true" layoutX="36.0" layoutY="339.0" prefHeight="325.0" prefWidth="447.0" title="line" visible="false">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>

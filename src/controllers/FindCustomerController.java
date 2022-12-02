@@ -23,8 +23,6 @@ import model.Customer;
 import model.User;
 import util.RetrieveCustomers;
 
-// MEXRI EDW DOKIMASE TO 
-
 public class FindCustomerController extends LongTermController{
 	
 	private final String ERROR_MESSAGE = "Please select a user from above";

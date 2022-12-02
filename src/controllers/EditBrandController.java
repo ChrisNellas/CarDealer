@@ -29,19 +29,7 @@ import model.Model;
 import model.User;
 import util.RetrieveBrands;
 import util.RetrieveModels;
-/* CHECKED
- *  saveBtn
- *  backBtn
- *  addModelBtn
- *  logoutBtn
- *  pickBtn
- *  
- *  ALL GOOD
- *  
- *  TO DO 
- *  CREATE addManufacturerEngineBtn to create new engine
- *  CREATE addManufacturerGearboxBtn to create new gearbox (NOT SURE YET)
- */
+
 public class EditBrandController extends LongTermController{
 	@FXML
 	private Button backBtn, pickBtn, addModelBtn, saveBtn;

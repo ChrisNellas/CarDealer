@@ -2,14 +2,8 @@ package tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.io.IOException;
-
 import org.junit.jupiter.api.Test;
 
-import controllers.AdminPanelController;
-import controllers.Controller;
-import controllers.LongTermController;
-import javafx.event.ActionEvent;
 import model.Customer;
 
 class test1 {

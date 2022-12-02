@@ -118,7 +118,7 @@ public class CreateNewCarOrderController extends LongTermController{
 //  LISTENERS
 	public void backBtnOnClick(ActionEvent ae) throws IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/FindCustomer.fxml"));
-		Parent root = loader.load();	
+		Parent root = loader.load();	 
 		FindCustomerController findCustomerController = loader.getController();
 		findCustomerController.setUser(loggedUser);
 		findCustomerController.populateList();
@@ -178,7 +178,7 @@ public class CreateNewCarOrderController extends LongTermController{
 			goToMainMenu(ae);			
 		}
 	}
-	
+	 
 /*	COMBOBOX HANDLERS
  * when a combo box gets new value unlock the next combo box(es)
  */

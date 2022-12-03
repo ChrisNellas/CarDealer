@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `cars_db2` /*!40100 DEFAULT CHARACTER SET utf8mb4  */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `cars_db2`;
+CREATE DATABASE  IF NOT EXISTS `cars_db` /*!40100 DEFAULT CHARACTER SET utf8mb4  */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `cars_db`;
 -- MySQL dump 10.13  Distrib 8.0.19, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: cars_db2
+-- Host: 127.0.0.1    Database: cars_db
 -- ------------------------------------------------------
 -- Server version	8.0.20
 

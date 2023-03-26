@@ -12,14 +12,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -32,7 +30,6 @@ import model.DBConnector;
 import model.Engine;
 import model.Model;
 import model.ModelVersion;
-import model.User;
 import util.RetrieveEngines;
 
 public class EditModelVersionController extends LongTermController{
@@ -45,7 +42,7 @@ public class EditModelVersionController extends LongTermController{
 	@FXML
 	private ListView<String> colorList;
 	@FXML
-	private ListView<Engine> manufacturerEngineList, availableEngineList;
+	private ListView<Engine> manufacturerEngineList;
 	
 	
 	
@@ -59,7 +56,7 @@ public class EditModelVersionController extends LongTermController{
 	private ObservableList<Engine> engines;
 	
 	
-	private Set<Engine> availEngines, manufacturerEngines;
+	private Set<Engine> manufacturerEngines;
 	
 	private CarBrand selectedBrand;
 	private Model selectedModel;
@@ -98,25 +95,21 @@ public class EditModelVersionController extends LongTermController{
 	
 	// retrieve all brand's engines and the currently available for this model version
 	public void getAvailableEngines(ModelVersion modelVersion) {
-		availEngines = new HashSet<>();
 		manufacturerEngines = new HashSet<>();
 		
 		engines = FXCollections.observableArrayList();
 		
 		Thread engineThread = new Thread(new RetrieveEngines(engines, modelVersion.getId(), manufacturerEngines, selectedBrand.getId())); //availEngines
 		engineThread.start();
-		availableEngineList.getItems().clear();
+		availEngineTable.getItems().clear();
 		manufacturerEngineList.getItems().clear();
 		try {
 			engineThread.join();
-			
 			
 //			System.out.println(engines);
 			availEngineTable.setItems(engines);
 //			System.out.println("2) "+availEngineTable.getItems());
 			
-			
-			availableEngineList.getItems().addAll(availEngines);
 			manufacturerEngineList.getItems().addAll(manufacturerEngines);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -176,7 +169,7 @@ public class EditModelVersionController extends LongTermController{
 			noSelectedEngineFoundAlert.showAndWait();
 			return ;
 		}
-		if(availableEngineList.getItems().stream().anyMatch(availEngine->availEngine.getId().equals(selectedEngine.getId()))) {
+		if(availEngineTable.getItems().stream().anyMatch(availEngine->availEngine.getId().equals(selectedEngine.getId()))) {
 			Alert alreadyAvailableEngineAlert = new Alert(AlertType.INFORMATION);
 			alreadyAvailableEngineAlert.setHeaderText("THIS ENGINE IS ALREADY AVAILABLE FOR THIS MODEL VERSION");
 			alreadyAvailableEngineAlert.showAndWait();
@@ -190,7 +183,7 @@ public class EditModelVersionController extends LongTermController{
 	 * if the user press the ok btn then change are applied and refresh the engines lists
 	 */
 	public void removeEngineBtnOnClick(ActionEvent ae) {
-		Engine selectedEngine = availableEngineList.getSelectionModel().getSelectedItem();
+		Engine selectedEngine = availEngineTable.getSelectionModel().getSelectedItem();
 		if(selectedEngine==null) {
 			Alert noSelectedEngineFoundAlert = new Alert(AlertType.ERROR);
 			noSelectedEngineFoundAlert.setHeaderText("FIRST SELECT AN ENGINE FROM AVAILABLE ENGINES LIST");
@@ -273,7 +266,7 @@ public class EditModelVersionController extends LongTermController{
 			return ;
 		}
 //		ONE OR BOTH(AVAILABLE ENGINES - COLORS) LISTS ARE EMPTY
-		if(availableEngineList.getItems().size()==0||colorList.getItems().size()==0) {
+		if(availEngineTable.getItems().size()==0||colorList.getItems().size()==0) {
 			Alert emptyListFoundAlert = new Alert(AlertType.ERROR);
 			emptyListFoundAlert.setHeaderText("PLEASE INSERT AT LEAST ONE ITEM AT AVAILABLE ENGINES AND COLORS LISTS");
 			emptyListFoundAlert.showAndWait();

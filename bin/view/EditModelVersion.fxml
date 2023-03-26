@@ -63,7 +63,6 @@
       <VBox alignment="CENTER" layoutX="311.0" layoutY="129.0" spacing="5.0">
          <children>
             <Label text="AVAILABLE ENGINES" />
-            <ListView fx:id="availableEngineList" disable="true" opacity="0.0" prefHeight="0.0" prefWidth="275.0" />
             <TableView fx:id="availEngineTable" prefHeight="200.0" prefWidth="275.0">
               <columns>
                 <TableColumn fx:id="availEngineNameCol" prefWidth="75.0" text="name" />

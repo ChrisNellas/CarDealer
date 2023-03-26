@@ -155,7 +155,7 @@ public class EditEngineController extends LongTermController{
 		stage = (Stage) ((Node)ae.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
-		stage.setTitle("Edit model");
+		stage.setTitle("Edit model Version");
 		stage.show();
 	}
 	

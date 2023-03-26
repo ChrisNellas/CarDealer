@@ -14,6 +14,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCombination;
+import javafx.scene.input.Mnemonic;
 import javafx.stage.Stage;
 import model.Role;
 import model.User;
@@ -61,6 +63,8 @@ public class LoginController {  //extends Controller
 					Scene scene = new Scene(root);
 					stage.setScene(scene);
 					stage.show();
+					
+//					scene.addMnemonic(new Mnemonic(root, KeyCombination.keyCombination("ENTER")));
 				} else {
 					FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/AdminPanel.fxml"));
 					Parent root = loader.load();

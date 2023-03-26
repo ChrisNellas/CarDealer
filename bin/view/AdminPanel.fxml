@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="709.0" prefWidth="910.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AdminPanelController">
    <children>
-      <BarChart fx:id="salesBar" animated="false" barGap="0.0" focusTraversable="true" layoutX="14.0" layoutY="14.0" prefHeight="287.0" prefWidth="503.0" title="Sales">
+      <BarChart fx:id="salesBar" barGap="0.0" focusTraversable="true" layoutX="14.0" layoutY="14.0" prefHeight="287.0" prefWidth="503.0" title="Sales">
         <xAxis>
           <CategoryAxis label="month" side="BOTTOM" tickLength="5.0" />
         </xAxis>

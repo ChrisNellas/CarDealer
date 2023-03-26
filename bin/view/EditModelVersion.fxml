@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EditModelVersionController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EditModelVersionController">
    <children>
       <GridPane alignment="CENTER" layoutX="165.0" layoutY="14.0" prefHeight="90.0" prefWidth="250.0" AnchorPane.leftAnchor="175.0" AnchorPane.rightAnchor="175.0">
          <columnConstraints>
@@ -55,16 +55,16 @@
          </children>
       </VBox>
       <Button fx:id="saveBtn" layoutX="280.0" layoutY="104.0" mnemonicParsing="false" onAction="#saveBtnOnClick" text="Save" />
-      <ListView fx:id="colorList" layoutX="311.0" layoutY="407.0" prefHeight="141.0" prefWidth="275.0" />
-      <Label layoutX="426.0" layoutY="385.0" text="COLORS" />
-      <Button fx:id="removeColorBtn" layoutX="406.0" layoutY="560.0" mnemonicParsing="false" onAction="#removeColorBtnOnClick" text="remove color" />
-      <TextField fx:id="colorField" layoutX="25.0" layoutY="478.0" promptText="insert a color" />
-      <Button fx:id="addColorBtn" layoutX="214.0" layoutY="478.0" mnemonicParsing="false" onAction="#addColorBtnOnClick" text="add color" />
+      <ListView fx:id="colorList" layoutX="311.0" layoutY="420.0" prefHeight="141.0" prefWidth="275.0" />
+      <Label layoutX="426.0" layoutY="395.0" text="COLORS" />
+      <Button fx:id="removeColorBtn" layoutX="406.0" layoutY="573.0" mnemonicParsing="false" onAction="#removeColorBtnOnClick" text="remove color" />
+      <TextField fx:id="colorField" layoutX="24.0" layoutY="491.0" promptText="insert a color" />
+      <Button fx:id="addColorBtn" layoutX="213.0" layoutY="491.0" mnemonicParsing="false" onAction="#addColorBtnOnClick" text="add color" />
       <VBox alignment="CENTER" layoutX="311.0" layoutY="129.0" spacing="5.0">
          <children>
             <Label text="AVAILABLE ENGINES" />
             <ListView fx:id="availableEngineList" disable="true" opacity="0.0" prefHeight="0.0" prefWidth="275.0" />
-            <TableView fx:id="availEngineTable" prefHeight="200.0" prefWidth="200.0">
+            <TableView fx:id="availEngineTable" prefHeight="200.0" prefWidth="275.0">
               <columns>
                 <TableColumn fx:id="availEngineNameCol" prefWidth="75.0" text="name" />
                 <TableColumn fx:id="availEnginePowerCol" prefWidth="75.0" text="power" />
